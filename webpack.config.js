@@ -7,6 +7,9 @@ module.exports = {
         filename: 'main.js',
     },
     devServer: {
-      contentBase: path.resolve(__dirname, 'dist'),
+      static: {
+        directory: path.join(__dirname, "dist"),
+      },
+      
   }
 }

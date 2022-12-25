@@ -1,5 +1,7 @@
 export default class Game{
   #table = []; 
+  #nextTurnIsBlack = true;
+
   constructor(){
     //tableのリセット
     for(let i = 0 ;i < 8; i++){
@@ -9,16 +11,28 @@ export default class Game{
       }
     }
   } 
-  //デフォルトの石の配置
+  
+  //デフォルトで石を配置
   startGame(){
     this.#table[3][3]="Black";
     this.#table[4][4]="Black";
     this.#table[3][4]="White";
     this.#table[4][3]="White";
   }
+
+  //プレイヤーの変更
+  togglePlayer(){
+    if(this.#nextTurnIsBlack==false){
+      this.#nextTurnIsBlack=true;
+    }else{
+      this.#nextTurnIsBlack=false;
+    }
+  }
+
   //テスト表示用関数
   Test(){
-    console.log(this.#table);
+    //console.log(this.#table);
+    console.log(this.#nextTurnIsBlack);
   }
   
 }

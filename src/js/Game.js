@@ -11,7 +11,7 @@ export default class Game{
       }
     }
   } 
-  
+
   //デフォルトで石を配置
   startGame(){
     this.#table[3][3]="Black";
@@ -31,8 +31,6 @@ export default class Game{
 
   //テスト表示用関数
   Test(){
-    //console.log(this.#table);
-    console.log(this.#nextTurnIsBlack);
+    console.log(this.#table);
   }
-  
 }

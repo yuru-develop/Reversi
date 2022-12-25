@@ -6,19 +6,23 @@ export default class Player{
     this.init(brackOrWhite);
   };
 
-  refleshCanPutPlaces(){
+  refleshCanPutPlaces(table){
     for(let i = 0; i < 8; i++){
         for(let j = 0; j < 8; j++){
-
+          
         }
     }
   }
-  countMyColor(){
+  countMyColor(table){
+    let count = 0;
     for(let i = 0; i < 8; i++){
         for(let j = 0; j < 8; j++){
-            
+          let color = "";
+          this.#myColorIsBlack === true? color = "Black": color = "White";
+          if(table[i][j] === color)count++;
         }
     }
+    this.#count = count;
   }
   init(brackOrWhite){
     brackOrWhite === "Brack"?this.#myColorIsBlack = true:this.#myColorIsBlack = false;

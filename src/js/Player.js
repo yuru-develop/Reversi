@@ -15,17 +15,17 @@ export default class Player{
   }
   countMyColor(table){
     let count = 0;
+    const color = this.#myColorIsBlack ? "Black": "White";
+
     for(let i = 0; i < 8; i++){
         for(let j = 0; j < 8; j++){
-          let color = "";
-          this.#myColorIsBlack === true? color = "Black": color = "White";
           if(table[i][j] === color)count++;
         }
     }
     this.#count = count;
   }
   init(brackOrWhite){
-    brackOrWhite === "Brack"?this.#myColorIsBlack = true:this.#myColorIsBlack = false;
+    this.#myColorIsBlack =  brackOrWhite === "Brack"? true : false;
     this.#canPutPlaces = this.refleshCanPutPlaces();
     this.#count = this.countMyColor();
   }

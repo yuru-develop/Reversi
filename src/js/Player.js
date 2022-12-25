@@ -6,13 +6,18 @@ export default class Player{
     this.init(brackOrWhite);
   };
 
-  refleshCanPutPlaces(table){
-    for(let i = 0; i < 8; i++){
+  refleshCanPutPlaces(){
+    const array = [];
+    /*for(let i = 0; i < 8; i++){
         for(let j = 0; j < 8; j++){
           
         }
-    }
+    }*/
+    array.push([0,0]);
+    array.push([0,1]);
+    this.#canPutPlaces = array;
   }
+
   countMyColor(table){
     let count = 0;
     const color = this.#myColorIsBlack ? "Black": "White";
@@ -22,11 +27,24 @@ export default class Player{
           if(table[i][j] === color)count++;
         }
     }
-    this.#count = count;
+    return count;
   }
+
   init(brackOrWhite){
-    this.#myColorIsBlack =  brackOrWhite === "Brack"? true : false;
-    this.#canPutPlaces = this.refleshCanPutPlaces();
-    this.#count = this.countMyColor();
+    const newtable = [[null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null],[null,null,null,"Black","White",null,null,null],[null,null,null,"White","Black",null,null,null],[null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null]];
+
+    this.#myColorIsBlack =  brackOrWhite === "Black"? true : false;
+    this.refleshCanPutPlaces(newtable);
+    this.#count = this.countMyColor(newtable);
+  }
+
+  get myColorIsBlack(){
+    return this.#myColorIsBlack;
+  }
+  get canPutPlaces(){
+    return this.#canPutPlaces;
+  }
+  get count(){
+    return this.#count;
   }
 }

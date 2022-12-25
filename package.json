@@ -1,0 +1,25 @@
+{
+  "devDependencies": {
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "scripts": {
+    "start": "npx webpack serve --mode development",
+    "build": "webpack --mode development"
+  },
+  "name": "app",
+  "description": "",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuru-develop/Reversi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuru-develop/Reversi/issues"
+  },
+  "homepage": "https://github.com/yuru-develop/Reversi#readme"
+}

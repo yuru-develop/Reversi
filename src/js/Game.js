@@ -29,6 +29,15 @@ export default class Game{
     }
   }
 
+  //石を置く
+  set setStone(pos){
+    if(Player.myColorIsBlack){
+      this.#table[pos.x][pos.y]="Black";
+    }else{
+      this.#table[pos.x][pos.y]="White";
+    }
+  }
+  
   //テスト表示用関数
   Test(){
     console.log(this.#table);

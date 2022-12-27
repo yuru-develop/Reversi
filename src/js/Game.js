@@ -11,5 +11,4 @@ export default class Game{
   Test(){
     console.log(this.#table);
   }
-
 }

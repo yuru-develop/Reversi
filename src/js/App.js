@@ -1,6 +1,6 @@
-import * as Game from './Game';
-import * as Player from './Player';
-import * as View from './View';
+import Game from './Game';
+import Player from './Player';
+import View from './View';
 class App {
   
 }
